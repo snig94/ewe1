@@ -1,0 +1,374 @@
+{% extends 'customers/homebase.html' %}
+{% load static%}
+{% block content %}
+
+
+<div class="container">
+<div class="women_main">
+  <!-- start sidebar -->
+  <div class="col-md-3">
+    <div class="w_sidebar">
+  
+    <section  class="sky-form" style="height:250px">
+          <h4>Product Categories</h4>
+            <div class="row1 scroll-pane">
+              
+              <div class="col col-4">
+                              <label class="checkbox"><input type="checkbox"  value="1" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>sarees </label>
+                                <label class="checkbox"><input type="checkbox"  value="2" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>kurtas & Kurtis</label>
+                                <label class="checkbox"><input type="checkbox"  value="3" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Dress material</label>
+                                <label class="checkbox"><input type="checkbox"  value="4" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Salwar suits</label>
+                                <label class="checkbox"><input type="checkbox"  value="5" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Lehenga cholis</label>
+                                <label class="checkbox"><input type="checkbox"  value="6" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Gowns</label>
+                                <label class="checkbox"><input type="checkbox"  value="7" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Bottom Wear</label>
+                                <label class="checkbox"><input type="checkbox"  value="8" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Blouses </label>
+                                <label class="checkbox"><input type="checkbox"  value="9" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>chunnis & dupattas</label>
+                                <label class="checkbox"><input type="checkbox"  value="10" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>sarees</label>
+                                <label class="checkbox"><input type="checkbox"  value="11" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Kurtas</label>
+                                <label class="checkbox"><input type="checkbox"  value="12" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Skirts</label>
+                                <label class="checkbox"><input type="checkbox"  value="13" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Leggings</label>
+                                <label class="checkbox"><input type="checkbox"  value="14" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Jeans</label>
+                                <label class="checkbox"><input type="checkbox"  value="15" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Shrugs</label>
+                                <label class="checkbox"><input type="checkbox"  value="16" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Palazzo</label>
+                                <label class="checkbox"><input type="checkbox"  value="17" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'categories_id')"><i></i>Tops</label>
+                              </div>
+            </div>
+    </section>
+   <!--  <section  class="sky-form" >
+          <h4>Product Brands</h4>
+            <div class="row1 scroll-pane">
+              
+              <div class="col col-4"  >
+                              <label class="checkbox"><input type="checkbox" value="14" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'brand_id')"><i></i>Nirapara</label>
+                                <label class="checkbox"><input type="checkbox" value="15" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'brand_id')"><i></i>Ponni</label>
+                                <label class="checkbox"><input type="checkbox" value="16" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'brand_id')"><i></i>ISI</label>
+                                <label class="checkbox"><input type="checkbox" value="17" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'brand_id')"><i></i>Nirapara</label>
+                                <label class="checkbox"><input type="checkbox" value="18" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'brand_id')"><i></i>kuruva</label>
+                                <label class="checkbox"><input type="checkbox" value="19" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'brand_id')"><i></i>Matta</label>
+                                <label class="checkbox"><input type="checkbox" value="20" name="checkbox" class="category" onClick="getMedicalproducts(this,this.value,'brand_id')"><i></i>nill</label>
+                              </div>
+            </div>
+    </section> -->
+  
+  
+    
+    
+  </div>
+   </div> <!-- start content -->
+  <div class="col-md-9 w_content">
+    <div class="women">
+      <a href="#"><h4>Search By - <span></span> </h4></a>
+      <!--<ul class="w_nav">
+            <li>Sort : </li>
+              <li><a class="active" href="#">popular</a></li> |
+              <li><a href="#">new </a></li> |
+              <li><a href="#">discount</a></li> |
+              <li><a href="#">price: Low High </a></li> 
+              <div class="clear"></div> 
+         </ul>-->
+         <div class="clearfix"></div> 
+    </div>
+    <!-- grids_of_4 -->
+    <div class="registration_form">
+    <select onChange="getProducts(this.value)">
+    <option>select</option>
+    <option value="1">Kurtis</option>
+    <option value="0">salwar suits</option>
+    <option value="All">Dress material</option></select>
+        </div>
+    <div class="grids_of_4" id="contents">
+    
+    
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/47065c4b038b5bc8c.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=9"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/67335c4bf90b9aa7d.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=10"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/198855c4bfa5778b3d.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=11"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/309465c4bfaa5a2026.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=12"> *</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/11395c4bfb547a246.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=13">##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/169205c4c006e66914.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=14">##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/308125c4c184c38f3d.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=15"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/305655c4c188eb8273.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=16"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/195145c4c18d4bbea5.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=17"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/207155c4c197031c4d.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=18"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/159445c4c19cf45cba.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=19"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/254715c4c1fdf842ea.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=20"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/162045c4c2000c66bc.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=21"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/231245c4c208e2ad8b.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=22"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/158695c4c20b882404.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=23"> ##</a></h4>
+             <p>*</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*</h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+    
+      <div class="grid1_of_4">
+        <div class="content_box"><a href="details.html">
+               <img src="http://localhost/projects/Supplyco/admin/assests/images/stock/210175c791eb230385.jpg"  class="img-responsive" style="height:150px; width:200px" alt=""/>
+              </a>
+            <h4><a href="View_one_product1.php?id=24"> ##</a></h4>
+             <p>##</p>
+           <div class="grid_1 simpleCart_shelfItem">
+            
+           <div class="item_add"><span class="item_price"><h6>*<strike>*</strike> </h6></span></div>
+          <div class="item_add"><span class="item_price"><a href="#" onclick="alert('Please login to purchase products')">Add to Cart</a>
+</span></div>
+           </div>
+          </div>
+      </div>
+      
+  
+      
+      <div class="clearfix"></div>
+    </div>
+    
+    
+    
+    
+    <!-- end grids_of_4 -->
+    
+    
+  </div>
+  <div class="clearfix"></div>
+  
+  <!-- end content -->
+</div>
+</div>
+
+
+
+{% endblock %} -->
+
