@@ -1,0 +1,73 @@
+
+
+{% extends 'admin/base.html' %}
+{% load static%}
+
+
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>EWE</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,500,300,700,400'>
+
+      <link rel="stylesheet" href="{% static "css/as.css" %}">
+
+  
+</head>
+
+<body>
+
+
+  <h2 class="aa_h2"> Products</h2>
+  <table>
+    <thead>
+										
+										<tr>
+										<th>Product ID</th>
+											<th>Product Name</th>
+											<th>Product Description </th>
+											<th>Price</th>
+											<th>Cateogry</th>
+											<th>Quantity</th>
+											<th>Date</th>
+											
+											<th>Image</th>
+											<th>EDIT</th>
+										</tr>
+									</thead>
+   <tbody>
+										{% for x in data %} 
+										<tr>
+										<td>{{x.id}}</td>
+										<td>{{x.productname}}</td>
+										<td>{{x.productdesc}}</td>
+										<td>{{x.price}}</td>
+										<td>{{x.category}}</td>
+										<td>{{x.quantity}}</td>
+										<td>{{x.date}}</td>
+										
+										<td><img src="{{x.image.url}}" alt="img" width="100 px" height="100 px"></td>
+										<td><a href="/admin/editpro/1/?id={{x.id}}">Edit</a> 	
+											</tr>
+											{% endfor %}
+									</tbody>
+									
+   
+  </table>
+
+
+  
+
+</body>
+
+</html>
+
+{% endblock %}

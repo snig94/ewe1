@@ -1,0 +1,56 @@
+{% extends 'admin/base.html' %}
+{% load static%}
+
+
+
+
+{% block content %}
+<div class="container-fluid">
+
+				<div class="row">
+					<div class="col-md-12">
+
+						<h2 class="page-title">Approve Customers</h2>
+
+						<!-- Zero Configuration Table -->
+						<div class="panel panel-default">
+							<div class="panel-heading">Customer Details</div>
+							<div class="panel-body">
+								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+									<thead>
+										
+										<tr>
+										<th>Customer ID</th>
+											
+											<th>Name </th>
+											<th>Email</th>
+											<th>Phone No.</th>
+											<th>Confirm</th>
+										</tr>
+									</thead>
+									{% for x in Approve_cust %}
+									<tbody>
+										
+										<td>{{x.id}}</td>
+										<td>{{x.name}} </td>
+										<td>{{x.email}}</td>
+										<td>{{x.phoneno}}</td>
+										<td><a href="/admin/confirm/?id={{x.id}}"> Confirm</a> 
+											
+									</tbody>
+									{% endfor %}
+								</table>
+
+
+
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+
+			</div>
+
+{% endblock %}

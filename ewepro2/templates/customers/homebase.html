@@ -1,0 +1,207 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>EWE </title>
+<!--Bootstrap -->
+<link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css"  %}" type="text/css">
+<!--Custome Style -->
+<link rel="stylesheet" href="{% static "assets/css/styles.css" %}" type="text/css">
+<!--OWL Carousel slider-->
+<link rel="stylesheet" href="{% static "assets/css/owl.carousel.css" %}" type="text/css">
+<link rel="stylesheet" href="{% static "assets/css/owl.transitions.css" %}" type="text/css">
+<!--slick-slider -->
+<link href="{% static "assets/css/slick.css" %}" rel="stylesheet">
+<!--bootstrap-slider -->
+<link href="{% static "assets/css/bootstrap-slider.min.css" %}" rel="stylesheet">
+<!--FontAwesome Font Style -->
+<link href="{% static "assets/css/font-awesome.min.css" %}" rel="stylesheet">
+
+
+
+
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "assets/images/favicon-icon/apple-touch-icon-144-precomposed.png" %}">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "assets/images/favicon-icon/apple-touch-icon-114-precomposed.html" %}">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png" %}">
+<link rel="apple-touch-icon-precomposed" href="{% static "assets/images/favicon-icon/apple-touch-icon-57-precomposed.png" %}">
+<!-- <link rel="shortcut icon" href="{% static "assets/images/favicon-icon/24x24.png" %}"> -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+<link href="{% static "css/css/bootstrap.css" %}" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary JavaScript plugins) -->
+<script type='text/javascript' src="{% static "/css/js/jquery-1.11.1.min.js" %}"></script>
+<!-- Custom Theme files -->
+<link href="{% static "/css/css/style.css" %}" rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+
+<!--Header-->
+
+<header>
+  <div class="default-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 col-md-2">
+          <!-- <div class="logo"> <a href=""><img src="{% static "assets/images/logg2.png" %}" alt="image"/></a> </div> -->
+          <h5>EWE</h5>
+        </div>
+        <div class="col-sm-9 col-md-10">
+          <div class="header_info">
+            <div class="header_widgets">
+             <!--  <div class="circle_icon"> <i class="fa fa-envelope" aria-hidden="true"></i> </div> -->
+              <p class="uppercase_text"> </p>
+              <!-- <a href="mailto:info@example.com"></a>  --></div>
+            <div class="header_widgets">
+              <div class="circle_icon"> <i class="fa fa-phone" aria-hidden="true"></i> </div>
+              <p class="uppercase_text">Helpline Call Us: </p>
+              <a href="tel:61-1234-5678-09">+91-9876543210</a> </div>
+           <!--  -->
+    <div class="login_btn"> <a href="/customer/csignin/" class="btn btn-xs uppercase" data-toggle="modal" data-dismiss="modal">Login / Register</a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navigation_bar" class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      </div>
+      <div class="header_wrap">
+        <div class="user_login">
+       EWE CUSTOMER     
+        </div>
+        
+      </div>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="nav navbar-nav">
+          <!-- <li><a href="index.php">Home</a>    </li> -->
+
+          <!-- <li><a href="">About Us</a></li> -->
+          <!-- <li><a href="">Entrepreneurs</a> -->
+          <!-- <li><a href="">Products</a></li> -->
+          
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navigation end -->
+
+</header>
+<!-- /Header -->
+
+<!--Page Header-->
+<section class="page-header listing_page">
+  <div class="container">
+    <div class="page-header_wrap">
+      <div class="page-heading">
+        <h1>EWE</h1>
+
+      </div>
+      <ul class="coustom-breadcrumb">
+        <li>Empowerment of Women Entrepreneurship</li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Dark Overlay-->
+  <div class="dark-overlay"></div>
+</section>
+<!-- /Page Header-->
+<style>
+  .blink {
+        animation: blinker 0.7s linear infinite;
+        color: #1c87c9;
+       }
+  @keyframes blinker {  
+        50% { opacity: 0; }
+       }
+       .blink-one {
+         animation: blinker-one 1s linear infinite;
+       }
+       @keyframes blinker-one {  
+         0% { opacity: 0; }
+       }
+       .blink-two {
+         animation: blinker-two 1.4s linear infinite;
+       }
+       @keyframes blinker-two {  
+         100% { opacity: 0; }
+       }
+
+</style>
+<section class="section-padding gray-bg">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Find the Best <span>Product For You</span></h2>
+      <p></p>
+    </div>
+    <div class="row">
+
+      <!-- Nav tabs -->
+      <div class="recent-tab">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="" role="tab" data-toggle="tab">Buy Online</a></li>
+        </ul>
+      </div>
+      
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="resentnewcar">
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% block content %}{% endblock %}
+
+<!--Footer -->
+
+
+
+
+
+<footer>
+  
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-push-6 text-right">
+          
+        </div>
+        <div class="col-md-6 col-md-pull-6">
+          <p class="copy-right">Copyright &copy; 2018 | ewe</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /Footer-->
+
+
+<!-- Scripts -->
+<script src="{% static "assets/js/jquery.min.js" %}"></script>
+<script src="{% static "assets/js/bootstrap.min.js" %}"></script>
+<script src="{% static "assets/js/interface.js" %}"></script>
+
+<!--bootstrap-slider-JS-->
+<script src="{% static "assets/js/bootstrap-slider.min.js" %}"></script>
+<!--Slider-JS-->
+<script src="{% static "assets/js/slick.min.js" %}"></script>
+<script src="{% static "assets/js/owl.carousel.min.js" %}"></script>
+<script src="{% static "js/fetchdata.js" %}"> </script>
+</body>
+</html>

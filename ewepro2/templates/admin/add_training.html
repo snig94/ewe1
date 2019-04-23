@@ -1,0 +1,55 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block content %}
+	
+	{{error.error_message}}
+	<div class="login-pagebk-img">
+		<div class="form-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<h1 class="text-center text-bold text-light mt-4x">Add Modules</h1>
+						<div class="well row pt-2x pb-3x bk-light">
+							<div class="col-md-8 col-md-offset-2">
+								<form method="post" action="admin/tmodule/"  enctype="multipart/form-data" nonvalidate>
+									{% csrf_token %}
+									<label for="" class="text-uppercase text-sm">Category </label>
+									<select name="category" class="form-control mb" required="required">
+										<option>Select Category</option>
+										{% for x in data %}
+										<option>{{x.categ}}</option>
+										{% endfor %}
+										
+									</select>
+									<label for="" class="text-uppercase text-sm">Sub Category </label>
+									<select name="scategory" class="form-control mb" required="required">
+										<option>Select Sub Category</option>
+										{% for x in data %}
+										<option>{{x.scateg}}</option>
+										{% endfor %}
+										
+									</select>
+									<!-- <input type="text" placeholder="Add categories" name="category" class="form-control mb" required="required">
+ -->
+									<label for="" class="text-uppercase text-sm">URL </label>
+									<input type="text" placeholder="Add url" name="url" class="form-control mb" required="required">
+									<label for="" class="text-uppercase text-sm">Discription </label>
+									<input type="text" placeholder="Add Descrioption" name="description" class="form-control mb" required="required">
+
+									<label for="" class="text-uppercase text-sm">Upload </label>
+									<input type="file" name="file" class="form-control mb" required="required">
+									<button class="btn btn-primary btn-block" name="submit" type="submit">Submit</button>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+

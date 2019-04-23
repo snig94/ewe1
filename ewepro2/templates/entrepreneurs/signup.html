@@ -1,0 +1,98 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>EWE  | Entrepreneurs Sign UP</title>
+	<link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
+	<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "css/dataTables.bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "css/bootstrap-social.css" %}">
+	<link rel="stylesheet" href="{% static "css/bootstrap-select.css" %}">
+	<link rel="stylesheet" href="{% static "css/fileinput.min.css" %}">
+	<link rel="stylesheet" href="{% static "css/awesome-bootstrap-checkbox.css" %}">
+	<link rel="stylesheet" href="{% static "/css/style.css" %}">
+<script type="text/javascript">
+		 		setTimeout(function() {
+    			$('#suc').fadeOut('slow');
+				}, 2000);
+          
+</script>
+
+</head>
+
+<body>
+<div style="background-color: white; color:red ; font-size: 22px" id="suc"><b>{{err}}</b></div>
+<div style="background-color: white; color:green ; font-size: 22px" id="suc"><b>{{suc}}</b></div>
+	<div class="login-pagebk-img">
+		<div class="form-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<h1 class="text-center text-bold text-light mt-4x">Entrepreneurs Signup</h1>
+						<div class="well row pt-2x pb-3x bk-light">
+							<div class="col-md-8 col-md-offset-2">
+								<form method="post" action="/entrepreneur/esignup/" >
+									{% csrf_token %}
+									<label for="" class="text-uppercase text-sm"> Name </label><span style="color: red">{{sign_up.name.errors}}</span>
+									<input type="text" placeholder="Enter your Name" name="name" class="form-control mb" required>
+									
+									<label for="" class="text-uppercase text-sm"> Company Name </label><span style="color: red">{{sign_up.company.errors}}</span>
+									<input type="text" placeholder="Enter your company name" name="cname" class="form-control mb" required>
+
+									<label for="" class="text-uppercase text-sm"> Description </label><span style="color: red">{{sign_up.description.errors}}</span>
+									<input type="text" placeholder="Enter company description name" name="description" class="form-control mb" required>
+
+									<label for="" class="text-uppercase text-sm"> Address </label><span style="color: red">{{sign_up.address.errors}}</span>
+									<input type="text" placeholder="Enter your address" name="address" class="form-control mb" required>
+
+									<label for="" class="text-uppercase text-sm"> Email </label><span style="color: red">{{sign_up.email.errors}}</span>
+									<input type="text" placeholder="Enter your Email" name="email" class="form-control mb" required>
+									
+									<label for="" class="text-uppercase text-sm"> Phone No. </label><span style="color: red">{{sign_up.phno.errors}}</span>
+									<input type="text" placeholder="Enter your Phone No." name="phno" class="form-control mb" required>
+									
+									<label for="" class="text-uppercase text-sm">Username </label><span style="color: red">{{sign_up.username.errors}}</span>
+									<input type="text" placeholder="Enter your Username" name="username" class="form-control mb" required>
+									
+
+									<label for="" class="text-uppercase text-sm">Password</label><span style="color: red">{{sign_up.password1.errors}}</span>
+									<input type="password" placeholder="Enter your Password" name="password1" class="form-control mb" required>
+									
+									<label for="" class="text-uppercase text-sm">Confirm Password</label>	<span style="color: red">{{sign_up.password2.errors}}</span>
+
+									<input type="password" placeholder="Enter your Password" name="password2" class="form-control mb" required>
+								
+
+
+									<button class="btn btn-primary btn-block" name="login" type="submit">Signup</button>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Loading Scripts -->
+	<script src="{% static "js/jquery.min.js" %}"></script>
+	<script src="{% static "js/bootstrap-select.min.js" %}"></script>
+	<script src="{% static "js/bootstrap.min.js" %}"></script>
+	<script src="{% static "js/jquery.dataTables.min.js" %}"></script>
+	<script src="{% static "js/dataTables.bootstrap.min.js" %}"></script>
+	<script src="{% static "js/Chart.min.js" %}"></script>
+	<script src="{% static "js/fileinput.js" %}"></script>
+	<script src="{% static "js/chartData.js" %}"></script>
+	<script src="{% static "js/main.js" %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block content %}
+{{error}}
+
+<div class="login-pagebk-img">
+		<div class="form-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<h1 class="text-center text-bold text-light mt-4x">Add Categories</h1>
+						<div class="well row pt-2x pb-3x bk-light">
+							<div class="col-md-8 col-md-offset-2">
+								<form method="post" action="admin/addcat/" nonvalidate>
+									{% csrf_token %}
+									<label for="" class="text-uppercase text-sm">Category </label>
+									<input type="text" placeholder="Add categories" name="category" class="form-control mb" required="required">
+									<button class="btn btn-primary btn-block" name="submit" type="submit">Submit</button>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}

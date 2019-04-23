@@ -1,0 +1,61 @@
+{% extends 'admin/base.html' %}
+{% load static%}
+
+
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>EWE</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,500,300,700,400'>
+
+      <link rel="stylesheet" href="{% static "css/as.css" %}">
+
+  
+</head>
+
+<body>
+
+
+  <h2 class="aa_h2"> Category</h2>
+  <table>
+    <thead>
+										
+										<tr>
+										<th> ID</th>
+										<th>Product Categories</th>
+											
+										</tr>
+									</thead>
+   
+									<tbody>
+										{% for x in data %}
+										<tr>
+										 
+										<td>{{x.id}}</td>
+										<td>{{x.Category}}</td>
+										
+										
+										
+									</tr>
+										{% endfor %}
+									</tbody>
+
+   
+  </table>
+
+
+  
+
+</body>
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'entrepreneurs/base.html' %}
+{% load static%}
+
+
+
+
+{% block content %}
+<script type="text/javascript">
+		 		setTimeout(function() {
+    			$('#msg').fadeOut('slow');
+    			
+				}, 2000);
+          
+	</script>
+	<div style="background-color: white; color:green ; font-size: 22px" id="msg"><b>{{msg}}</b></div>
+
+<div class="container-fluid">
+
+				<div class="row">
+					<div class="col-md-12">
+
+						<h2 class="page-title">Training Modules</h2>
+
+						<!-- Zero Configuration Table -->
+						<div class="panel panel-default">
+							<div class="panel-heading">Details</div>
+							<div class="panel-body">
+								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+									<thead>
+										
+										<tr>
+										<th> ID</th>
+											<th>Category</th>
+											<th>Sub Category</th>
+											<th>URL</th>
+											<th>Description </th>
+											
+											<th>Image</th>
+											<!-- <th>VIEW</th> -->
+										</tr>
+									</thead>
+									 {% for x in data %} 
+									<tbody>
+										<td>{{x.id}}</td>
+										<td>{{x.Category}}</td>
+										<td>{{x.Scategory}}</td>
+										<td><a href="https://www.google.com/" target="_blank">{{x.URL}}</a></td>
+										<td>{{x.Description}}</td>
+										
+										<!-- <td><img src="{{x.image.url}}" alt="img" width="100 px" height="100 px"></td> -->
+										<td><a href="{{x.image.url}}" download>Download attachment</a></td>
+										<!-- <td><a href="/entrepreneur/view/?id={{x.id}}">View</a>  -->	
+											
+									</tbody>
+									{% endfor %}
+								</table>
+
+
+
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+
+			</div>
+
+{% endblock %}

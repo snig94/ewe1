@@ -1,0 +1,110 @@
+{% extends 'entrepreneurs/base.html' %}
+{% load static%}
+
+
+
+
+{% block content %}
+<script type="text/javascript">
+	
+		function pic()
+		{
+			var name=$("#cat").val();
+			alert(name);
+			$.ajax({
+        			url: '/entrepreneur/change/', 
+        			data:
+        			{
+                		 
+                		'category': name,
+                		
+            		},
+            		dataType: 'json',
+            		success: function (data) 
+            			{
+            			 	$("#iid").val(data.data[0].id);
+            				$("#url").val(data.data[0].URL);
+            				$("#description").val(data.data[0].Description);
+            				$("#file").val(data.data[0].image);
+            				alert(data.data[0].image);
+            				// alert(data.Description);
+
+           					
+        				}	
+            	});	
+		}
+
+		
+</script>
+
+
+
+
+<div class="login-pagebk-img">
+		<div class="form-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<h1 class="text-center text-bold text-light mt-4x">Training</h1>
+						<div class="well row pt-2x pb-3x bk-light">
+							<div class="col-md-8 col-md-offset-2">
+								<form method="post" action="admin/tmodule/"  enctype="multipart/form-data" nonvalidate>
+									{% csrf_token %}
+									<label for="" class="text-uppercase text-sm">Category </label>
+									<select name="category" id="cat" class="form-control mb" required="required" onchange="pic()">
+										<option>Select Category</option>
+										{% for x in data %}
+										<option>{{x.categ}}</option>
+										{% endfor %}
+										
+									</select>
+									<!-- <input type="text" placeholder="Add categories" name="category" class="form-control mb" required="required">
+ -->								
+ 									<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+									<thead>
+										
+										<tr>
+										<th> ID</th>
+											
+											<th>URL </th>
+											<th>Description</th>
+											<th>Image</th>
+											<th>Confirm</th>
+										</tr>
+									</thead>
+									
+									<tbody>
+										
+										<td><input type="text"  id="iid" readonly name="iid" class="form-control mb" required="required"></td>
+										<td><input type="text"  id="url" readonly name="url" class="form-control mb" required="required"> </td>
+										<td><input type="text" id="description" readonly placeholder="Add Descrioption" name="description" class="form-control mb" required="required"></td>
+										<td><img id="file" alt="img" width="100 px" height="100 px"></td>
+										<td><a href="/admin/confirm/?id={{x.id}}"> Confirm</a> 
+											
+									</tbody>
+									
+								</table>
+
+
+									<label for="" class="text-uppercase text-sm">URL </label>
+									
+									<label for="" class="text-uppercase text-sm">Discription </label>
+									
+
+									<label for="" class="text-uppercase text-sm">Image </label>
+									
+									<!-- <button class="btn btn-primary btn-block" name="submit" type="submit">Submit</button> -->
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+{% endblock %}

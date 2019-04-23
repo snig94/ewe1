@@ -1,0 +1,61 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block content %}
+	<script type="text/javascript">
+		 		setTimeout(function() {
+    			$('#msg').fadeOut('slow');
+    			$('#msg1').fadeOut('slow');
+				}, 2000);
+          
+	</script>
+	<div style="background-color: white; color:green ; font-size: 22px" id="msg"><b>{{msg}}</b></div>
+	<div style="background-color: white; color:green ; font-size: 22px" id="msg1"><b>{{msg1}}</b></div>
+	<div class="login-pagebk-img">
+		<div class="form-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<h1 class="text-center text-bold text-light mt-4x">Add products</h1>
+						<div class="well row pt-2x pb-3x bk-light">
+							<div class="col-md-8 col-md-offset-2">
+								<form method="post" action="admin/categr/" enctype="multipart/form-data" >
+									{% csrf_token %}
+									<label for="" class="text-uppercase text-sm">Product name </label>
+									<input type="text" placeholder="Enter Product name" name="pname" class="form-control mb" required="required">
+									<label for="" class="text-uppercase text-sm">Product Description</label>
+									<input type="text" placeholder="Enter Product Description" name="pdesc" class="form-control mb" required="required">
+									<label for="" class="text-uppercase text-sm">Price </label>
+									<input type="number" placeholder="Enter Price" name="price" class="form-control mb" required="required">
+									<label for="" class="text-uppercase text-sm">Category </label>
+									<select name="category" class="form-control mb" required="required">
+										<option>Select Category</option>
+										{% for x in data %}
+										<option>{{x.Category}}</option>
+										{% endfor %}
+										
+									</select>
+									<label for="" class="text-uppercase text-sm">Quantity</label>
+									<input type="number" placeholder="Enter Quantity" name="quantity" class="form-control mb" required="required">
+
+									
+
+									<label for="" class="text-uppercase text-sm">GST</label>
+									<input type="number" placeholder="Enter GST" name="gst" class="form-control mb" required="required">
+
+									<label for="" class="text-uppercase text-sm">Upload Image </label>
+									<input type="file" placeholder="Select an image " name="image" class="form-control mb" required="required"> 
+
+									<button class="btn btn-primary btn-block" name="submit" type="submit">Submit</button>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

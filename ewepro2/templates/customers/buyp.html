@@ -1,0 +1,67 @@
+{% extends 'customers/base.html' %}
+
+{% load static%}
+
+
+
+
+{% block content %}
+	<div class="login-pagebk-img">
+		<div class="form-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<h1 class="text-center text-bold text-light mt-4x">Product</h1>
+						<div class="well row pt-2x pb-3x bk-light">
+							<div class="col-md-8 col-md-offset-2">
+								<form method="post" action="/customer/buyit/"  enctype="multipart/form-data" nonvalidate>
+									{% csrf_token %}
+									{% for x in data %}
+									<input type="hidden" value="{{x.id}}" name="id" class="form-control mb" required="required">
+									<input type="hidden" value="{{x.eid}}" name="eid"  class="form-control mb" required="required">
+
+									<label for="" class="text-uppercase text-sm">Name </label>
+									
+									<input type="text" value="{{x.productname}}" readonly name="name" class="form-control mb" required="required">
+
+									<label for="" class="text-uppercase text-sm">Description </label>
+									<input type="text" value="{{x.productdesc}}" name="description" class="form-control mb" readonly required="required">
+									<label for="" class="text-uppercase text-sm">Price </label>
+									<input type="text" value="{{x.price}}" readonly id="price" name="price" class="form-control mb" required="required">
+									<label for="" class="text-uppercase text-sm">Category </label>
+									<input type="text" value="{{x.category}}" readonly name="category" class="form-control mb" required="required">
+									<label for="" class="text-uppercase text-sm">Available Quantity </label>
+									<input type="text" value="{{x.quantity}}" readonly name="aquantity" class="form-control mb" required="required">
+									<label for="" class="text-uppercase text-sm">Quantity </label>
+									<input type="text" id="quantity"  name="quantity" class="form-control mb" required="required" onblur="totp(this)">
+									<label for="" class="text-uppercase text-sm">Total Price </label>
+									<input type="text" id="tprice" readonly  name="tprice" class="form-control mb" required="required">
+
+									<label for="" class="text-uppercase text-sm">Address </label>
+									<input type="text"  name="address" class="form-control mb" required="required">
+
+									<label for="" class="text-uppercase text-sm">Phone Number </label>
+									<input type="Number"  name="phone" class="form-control mb" required="required">
+
+
+									<label for="" class="text-uppercase text-sm">Image </label>
+									<img src="{{x.image}}"  alt="img" width="100 px" height="100 px">
+									<input type="hidden" id="tprice" value="{{x.image}}"  name="image" class="form-control mb" >
+
+								</br>
+								</br>
+
+									
+									<button class="btn btn-primary btn-block" name="submit" type="submit">Buy Now</button>
+									{% endfor%}
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
